@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="zh-Hans">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link rel="stylesheet" href="style.css" media="(max-width:500px)">
+  <title>移动端页面</title>
+  <style>
+    *{
+      margin: 0;padding: 0;
+    }
+    a{
+      color: inherit;
+      text-decoration: none;
+    }
+    ul,ol{
+      list-style: none;
+    }
+    header{
+      padding:20px;
+      position: relative;
+    }
+    header>button{
+      position: absolute;
+      top:40px;
+      right:40px;
+    }
+    .nav2{display: none;}
+    @media(min-width:451px){
+      header>button{
+        display: none;
+      }
+      .nav,.nav.nav.active{
+        display: none;
+      }
+      .nav2{display: block;}
+      header{
+        display: flex;
+        align-items: center;
+      }
+      header .nav2{
+        display: flex;
+        margin-left: 20px;
+      }
+      header .nav2>li{
+        margin: 0 10px;
+      }
+    }
+    .logo{
+      width: 50px;
+      height: 50px;
+      border-radius: 30px;
+      background: gray;
+
+    }
+    .clearfix::after{
+      content:'';
+      display: block;
+      clear: both;
+    }
+    .nav>li{
+      float: left;
+    }
+    .nav{
+      display: none;
+      background: gray;
+      margin-top: 10px;
+    }
+    .nav.active{
+      display: flex;
+      justify-content:space-between;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class = "logo"></div>
+    <button id = "xx">菜单</button>
+    <ul id = "yy" class="nav">
+      <li><a href="#">导航1</a></li>
+      <li><a href="#">导航2</a></li>
+      <li><a href="#">导航3</a></li>
+      <li><a href="#">导航4</a></li>
+      <li><a href="#">导航5</a></li>
+    </ul>
+    <ul class="nav2">
+        <li><a href="#">导航1</a></li>
+        <li><a href="#">导航2</a></li>
+        <li><a href="#">导航3</a></li>
+        <li><a href="#">导航4</a></li>
+        <li><a href="#">导航5</a></li>
+    </ul>
+  </header>
+</body>
+<script>
+  xx.onclick = function(){
+    yy.classList.toggle('active');
+  }
+</script>
+</html>
